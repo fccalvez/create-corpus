@@ -134,3 +134,5 @@ dmypy.json
 *.csv
 *.bz2
 *.zip
+.vscode/settings.json
+.idea/
