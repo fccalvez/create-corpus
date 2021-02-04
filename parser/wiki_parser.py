@@ -46,6 +46,7 @@ def clean_text(text):
     else:
         cleaned_text = re.sub(r"(\{\{(.*?)\}\})", "", text, flags=re.DOTALL)
         cleaned_text = re.sub(r"(\{\|(.*?)\|\})", "", cleaned_text, flags=re.DOTALL)
+        cleaned_text = re.sub(r"(<!--(.*?)-->)", "", cleaned_text)
         cleaned_text = re.sub(
             r"(\(\[\[(\d+)(.*?)\]\](\)|-\[\[(\d+)(.*?)\]\]\)))", "", cleaned_text
         )
@@ -53,18 +54,17 @@ def clean_text(text):
         cleaned_text = re.sub(r"(\[http(.*?)\])", "", cleaned_text)
         cleaned_text = re.sub(r"(:\w+(.*)(<|>)(.*))", "", cleaned_text)
         cleaned_text = re.sub(
-            r"(<(ref|gallery|tt|kbd|timeline|math|cite|code|head|style|syntaxhighlight|html|meta|hiero|ol|li).*?>(.?|.+?)</(ref|gallery|tt|kbd|timeline|math|cite|code|head|style|syntaxhighlight|html|meta|hiero|ol|li)>)",
-            "",
-            cleaned_text,
-            flags=re.DOTALL,
-        )
-        cleaned_text = re.sub(
             r"(<([0-9]*sup|sub|span|div|blockquote|br|small|strong|p|i|nowiki|hr|HR|references /|references/|noinclude|table|tr|td|th|TABLE|TR|TD|TH|b|center|font|u|q|/sup|/sub|/span|/div|/blockquote|/br|/small|/strong|/p|/i|/nowiki|/hr|/HR|/references|/table|/tr|/td|/TABLE|/TR|/TD|/TH|/th|/b|/noinclude|/center|/font|/u|/q).*?>)",
             "",
             cleaned_text,
             flags=re.DOTALL,
         )
-        cleaned_text = re.sub(r"(<!--(.*)-->)", "", cleaned_text, flags=re.DOTALL)
+        cleaned_text = re.sub(
+            r"(<(ref|gallery|tt|kbd|timeline|math|cite|code|head|style|syntaxhighlight|html|meta|hiero|ol|li).*?>(.?|.+?)</(ref|gallery|tt|kbd|timeline|math|cite|code|head|style|syntaxhighlight|html|meta|hiero|ol|li)>)",
+            "",
+            cleaned_text,
+            flags=re.DOTALL,
+        )
     if cleaned_text is not None:
         cleaned_text = re.sub(r"(\[\[(\d+)(.*?)\]\])", "", cleaned_text)
         for key, value in global_replace.items():

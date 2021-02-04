@@ -45,7 +45,7 @@ Yalc'had Skoazell Desk.jpg Levrioùgoù evit broudañ studierien da c'houlenn ar
         ("gwelit [http://ai.ta.free.fr/])", "gwelit )"),
         ("<tt>$1</tt>", ""),
         ("""<gallery mode"packed" heights"300px" style"margin-top
-Bicycle evolution-fr.svg Emdroadur ar marc'h-houarn abaoe deroù an XIXvet kantved
+Bicycle evolution-fr.svg> Emdroadur ar marc'h-houarn abaoe deroù an XIXvet kantved
 1000px-Marc'h-houarn.png Elfennoù pouezusañ ur marc'h-houarn a vremañ
 </gallery>""", "")
     ],
