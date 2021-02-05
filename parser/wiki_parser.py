@@ -32,7 +32,7 @@ global_replace = {
     "</syntaxhighlight>": "",
     '<span style"color': "",
     '<div style"text-align': "",
-    '<div Style"position': ""
+    '<div Style"position': "",
 }
 
 
